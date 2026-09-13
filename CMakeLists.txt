@@ -27,15 +27,6 @@ add_executable(${PROJECT_NAME}
     ${PROJECT_SOURCES}
 )
 
-if(WIN32)
-    target_compile_definitions(${PROJECT_NAME} PRIVATE
-        UNICODE
-        _UNICODE
-        NOMINMAX
-        WIN32_LEAN_AND_MEAN
-)
-endif()
-
 # ---- MSVC runtime ----
 if(MSVC)
     set_property(TARGET ${PROJECT_NAME} PROPERTY
