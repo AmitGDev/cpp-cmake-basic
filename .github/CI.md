@@ -1,10 +1,10 @@
 # GitHub CI Infrastructure
 
-This directory contains the GitHub Actions workflows and reusable composite actions that implement the project's CI/CD pipeline.
+This directory contains the GitHub Actions workflows and reusable composite actions that implement the project's CI pipeline.
 
 ## Architecture
 
-The CI/CD infrastructure follows a **Recipe Pattern**:
+The CI infrastructure follows a **Recipe Pattern**:
 
 * **Workflows** are recipes that define high-level, platform-agnostic orchestration.
 * **Composite Actions** are ingredients that encapsulate reusable implementation details.
@@ -738,13 +738,13 @@ Common operations should be implemented once and reused rather than duplicated a
 
 ## Maintenance
 
-When modifying the CI/CD infrastructure:
+When modifying the CI infrastructure:
 
 1. Keep workflow orchestration high-level.
 2. Put reusable implementation in composite actions.
 3. Put analysis parameters in `.github/static-code-analysis.json`.
 4. Keep configuration validation centralized in `process-analysis-config`.
-5. Update `WORKFLOWS.md` when the CI/CD architecture or behavior changes.
+5. Update `CI.md` when the CI architecture or behavior changes.
 6. Keep platform-specific behavior inside the appropriate composite action.
 7. Avoid introducing implicit configuration defaults.
 
@@ -754,12 +754,12 @@ When adding a new analysis capability, first determine whether it belongs in con
 
 ## Contributing
 
-Changes to the CI/CD infrastructure should be tested against all affected matrix combinations before being merged.
+Changes to the CI infrastructure should be tested against all affected matrix combinations before being merged.
 
 When changing the workflow architecture or behavior, update:
 
 ```text
-.github/WORKFLOWS.md
+.github/CI.md
 ```
 
 to keep the documentation consistent with the implementation.
